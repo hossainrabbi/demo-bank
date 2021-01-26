@@ -12,11 +12,13 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <section class="container">
-      <div class="form-area p-4">
+    <section class="container p-4">
+      <!-- Login Area -->
+      <div id="login-area">
         <h1 class="text-center">Welcome to Demo Bank</h1>
-        <form class="login-area shadow-lg mt-5 p-5" id="login-form">
+        <div class="shadow-lg mt-5 p-5" id="login-form">
           <h3 class="mb-3">Login</h3>
           <input type="text" placeholder="Email" class="form-control" />
           <input
@@ -24,9 +26,60 @@
             placeholder="Password"
             class="form-control my-3"
           />
-          <button type="submit" class="btn btn-success">Login</button>
-        </form>
+          <button type="submit" class="btn btn-success" id="login-btn">
+            Login
+          </button>
+        </div>
+      </div>
+      <!-- Transaction Area -->
+      <div id="transaction-area">
+        <h2 class="text-center mb-5 fs-1">Transaction</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="status deposit rounded-3 text-white p-3 mb-3">
+              <h5>Deposit</h5>
+              <h2>$00</h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="status withdraw rounded-3 text-white p-3 mb-3">
+              <h5>Withdraw</h5>
+              <h2>$00</h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="status balance rounded-3 text-white p-3 mb-3">
+              <h5>Balance</h5>
+              <h2>$1520</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="shadow-lg mt-5 p-5">
+              <h4>Deposit</h4>
+              <input
+                type="number"
+                class="form-control my-3"
+                placeholder="$ amount you want to deposit"
+              /><button type="submit" class="btn btn-success">Deposit</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="shadow-lg mt-5 p-5">
+              <h4>Withdraw</h4>
+              <input
+                type="number"
+                class="form-control my-3"
+                placeholder="$ amount you want to withdraw"
+              /><button type="submit" class="btn btn-success">Withdraw</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <script src="script.js"></script>
   </body>
 </html>

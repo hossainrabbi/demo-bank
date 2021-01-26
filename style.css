@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+#transaction-area {
+  display: none;
+}
+
+.deposit {
+  background-color: cornflowerblue;
+}
+.withdraw {
+  background-color: gray;
+}
+.balance {
+  background-color: orange;
+}
