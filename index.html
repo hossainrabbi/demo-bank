@@ -38,7 +38,7 @@
           <div class="col-md-4">
             <div class="status deposit rounded-3 text-white p-3 mb-3">
               <h5>Deposit</h5>
-              <h2>$00</h2>
+              <h2>$ <span id="current-deposit">00</span></h2>
             </div>
           </div>
           <div class="col-md-4">
@@ -50,7 +50,7 @@
           <div class="col-md-4">
             <div class="status balance rounded-3 text-white p-3 mb-3">
               <h5>Balance</h5>
-              <h2>$1520</h2>
+              <h2>$ <span id="current-balance">1520</span></h2>
             </div>
           </div>
         </div>
@@ -63,7 +63,10 @@
                 type="number"
                 class="form-control my-3"
                 placeholder="$ amount you want to deposit"
-              /><button type="submit" class="btn btn-success">Deposit</button>
+                id="deposit-value"
+              /><button type="submit" class="btn btn-success" id="deposit-btn">
+                Deposit
+              </button>
             </div>
           </div>
           <div class="col-md-6">
