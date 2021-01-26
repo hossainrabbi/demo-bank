@@ -1,5 +1,6 @@
 const loginBtn = document.getElementById('login-btn');
 const addDeposit = document.getElementById('deposit-btn');
+const addWithdraw = document.getElementById('withdraw-btn');
 
 // Login button event handler
 loginBtn.addEventListener('click', function () {
@@ -11,8 +12,7 @@ loginBtn.addEventListener('click', function () {
 
 // Deposit & Balance button event handler
 addDeposit.addEventListener('click', function () {
-  const depositValue = document.getElementById('deposit-value').value;
-  const depositValueNumber = parseFloat(depositValue);
+  const depositValueNumber = getInputValue('deposit-value');
 
   // Deposit
   updateAmount('current-deposit', depositValueNumber);
@@ -22,10 +22,29 @@ addDeposit.addEventListener('click', function () {
   document.getElementById('deposit-value').value = '';
 });
 
+// withdraw & Balance button event handler
+addWithdraw.addEventListener('click', function () {
+  const withdrawValueNumber = getInputValue('withdraw-value');
+
+  // withdraw
+  updateAmount('current-withdraw', withdrawValueNumber);
+  // Balance
+  updateAmount('current-balance', -1 * withdrawValueNumber);
+
+  document.getElementById('withdraw-value').value = '';
+});
+
+// Get Input value
+function getInputValue(id) {
+  const amountInputValue = document.getElementById(id).value;
+  const amountInputValueNumber = parseFloat(amountInputValue);
+  return amountInputValueNumber;
+}
+
 // Deposit & Balance calculator
-function updateAmount(id, depositValueNumber) {
+function updateAmount(id, value) {
   const current = document.getElementById(id).innerText;
   currentNumber = parseFloat(current);
-  const totalAmount = currentNumber + depositValueNumber;
+  const totalAmount = currentNumber + value;
   document.getElementById(id).innerText = totalAmount;
 }
